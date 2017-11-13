@@ -15,14 +15,13 @@ public class Hero extends LivingThing {
 
     @Override
     public void wounded(int damage){
-        int hp=getHitPoint();
+
         String na=getName();
-        Boolean de=getIsdead();
-        hp -= damage;
-        setHitPoint(hp);
-        if( hp < 0 ) {
-            de = true;
-            setIsdead(de);
+
+        hitPoint -= damage;
+
+        if( hitPoint < 0 ) {
+            dead = true;
             System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", na);
         }
     }

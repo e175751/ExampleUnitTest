@@ -9,20 +9,20 @@ public class Enemy extends LivingThing {
         super(name,maximumHP,attack);
     }
 
-    int hp=getHitPoint();
-    String na=getName();
-    boolean de=getIsdead();
+    //int hp=getHitPoint();
+    //String na=getName();
+    //boolean de=getIsdead();
 
     @Override
     public void wounded(int damage){
-        int hp=getHitPoint();
+
         String na=getName();
-        boolean de=getIsdead();
-        hp -= damage;
-        setHitPoint(hp);
-        if( getHitPoint() < 0 ) {
-            de = true;
-            setIsdead(de);
+
+        hitPoint -= damage;
+
+        if( hitPoint < 0 ) {
+            dead = true;
+
             System.out.printf("モンスター%sは倒れた。\n", na);
         }
     }
