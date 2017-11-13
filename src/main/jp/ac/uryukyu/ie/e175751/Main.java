@@ -12,6 +12,7 @@ public class Main {
 
         int turn = 0;
         while( !hero.isDead()  && enemy.isDead() == false ){
+            //System.out.printf("%s, %s", hero.isDead(), enemy.isDead());
             turn++;
             System.out.printf("%dターン目開始！\n", turn);
             hero.attack(enemy);
